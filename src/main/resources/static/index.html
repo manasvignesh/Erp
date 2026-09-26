@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NLSC Event Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div>
+      <h1>NLSC Event Registration</h1>
+      <p>Mobile App Development</p>
+    </div>
+    <div id="userArea" class="user-area hidden">
+      <span id="userName"></span>
+      <button id="logoutBtn" class="small-btn">Logout</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="loginView" class="card login-card">
+    <h2>Login</h2>
+    <p class="muted">Enter your registered email and password.</p>
+
+    <form id="loginForm">
+      <label>Email</label>
+      <input id="email" type="email" placeholder="student@demo.com" required>
+
+      <label>Password</label>
+      <input id="password" type="password" placeholder="demo123" required>
+
+      <button class="primary-btn" type="submit">Login</button>
+      <p id="loginError" class="error"></p>
+    </form>
+
+    <div class="demo-box">
+      <strong>Demo student:</strong><br>
+      student@demo.com / demo123
+    </div>
+  </section>
+
+  <section id="eventsView" class="hidden">
+    <div class="section-heading">
+      <div>
+        <h2>Events</h2>
+        <p class="muted">Search and register for available events.</p>
+      </div>
+    </div>
+
+    <input id="eventSearch" class="search" type="text"
+           placeholder="Search by event name or date...">
+
+    <div id="eventList" class="event-list"></div>
+  </section>
+
+  <section id="detailView" class="hidden">
+    <button id="backBtn" class="back-btn">← Back to events</button>
+
+    <div class="card">
+      <div class="detail-head">
+        <div>
+          <h2 id="detailName"></h2>
+          <span id="detailStatus" class="status"></span>
+        </div>
+      </div>
+
+      <p id="detailDescription"></p>
+
+      <div class="info-grid">
+        <div><strong>Date</strong><span id="detailDate"></span></div>
+        <div><strong>Location</strong><span id="detailLocation"></span></div>
+        <div><strong>Organizer</strong><span id="detailOrganizer"></span></div>
+        <div><strong>Support</strong><span id="detailSupport"></span></div>
+      </div>
+    </div>
+
+    <div id="studentTeamArea" class="card hidden">
+      <h3>Team Registration</h3>
+      <div id="teamRegistered" class="hidden"></div>
+
+      <form id="teamForm">
+        <label>Team Name</label>
+        <input id="teamName" type="text" placeholder="Enter team name" required>
+
+        <label>Invite Members</label>
+        <input id="memberSearch" type="text" placeholder="Search students...">
+        <div id="memberList" class="member-list"></div>
+
+        <p class="hint">Maximum team size: 3 including captain.</p>
+        <button class="primary-btn" type="submit">Create Team</button>
+        <p id="teamMessage"></p>
+      </form>
+    </div>
+
+    <div id="attendanceArea" class="card">
+      <h3>Attendance (Bonus)</h3>
+      <p class="muted">Enter the code obtained from the event QR.</p>
+
+      <div class="row">
+        <input id="attendanceCode" type="text" placeholder="QR code">
+        <button id="markAttendanceBtn" class="primary-btn">Mark Attendance</button>
+      </div>
+
+      <div id="adminQrArea" class="hidden">
+        <hr>
+        <button id="generateQrBtn" class="secondary-btn">Generate Event QR</button>
+        <div id="qrResult"></div>
+      </div>
+
+      <p id="attendanceMessage"></p>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
